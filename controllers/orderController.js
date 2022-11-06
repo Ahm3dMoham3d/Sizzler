@@ -35,9 +35,7 @@ exports.addOrder = catchAsync(async (req, res, next) => {
     message: "تمت الاضافة بنجاح",
     order: newOrder,
   });
-  // Order.counterReset("orderNumber", function (err) {
-  //   // If this is a referenced field, now all the counters are 0
-  // });
+  
 });
 
 // Update Order
@@ -67,3 +65,8 @@ exports.deleteOrder = async (req, res) => {
     });
   }
 };
+exports.restCounter = async (req, res) => {
+Order.counterReset("orderNumber", function (err) {
+    // If this is a referenced field, now all the counters are 0
+  });
+}
