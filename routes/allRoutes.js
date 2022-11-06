@@ -315,6 +315,11 @@ router
     authController.restrictTo("admin", "cashier"),
     orderController.addOrder
   );
+router.route("/orderReset").get(
+authController.protectedRoute,
+    authController.restrictTo("admin", "cashier"),
+    orderController.orderReset
+)
 router
   .route("/order/:id")
   .get(
