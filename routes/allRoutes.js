@@ -318,7 +318,7 @@ router
 router.route("/orderReset").get(
 authController.protectedRoute,
     authController.restrictTo("admin", "cashier"),
-    orderController.orderReset
+    orderController.restCounter
 )
 router
   .route("/order/:id")
